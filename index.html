@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaveWeb</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем PeerJS для P2P соединения -->
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>RaveWeb</h1>
+    <div class="connection-panel">
+      <div class="my-id-box">Ваш ID: <span id="my-id">Загрузка...</span></div>
+      <div class="connect-box">
+        <input type="text" id="peer-id-input" placeholder="Введите ID друга">
+        <button id="connect-btn">Подключиться</button>
+      </div>
+      <div id="status">🔴 Отключен</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="left-panel">
+      <!-- Поиск YouTube -->
+      <div class="search-panel">
+        <input type="text" id="search-input" placeholder="Найти видео на YouTube...">
+        <button id="search-btn">Искать</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+
+      <!-- Видеоплеер -->
+      <div class="player-container">
+        <div id="player"></div>
+        <div class="player-overlay" id="player-overlay">Подключитесь к другу или выберите видео для начала</div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <!-- Чат -->
+      <div class="chat-container">
+        <h3>Чат</h3>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input-box">
+          <input type="text" id="chat-input" placeholder="Сообщение...">
+          <button id="send-btn">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
